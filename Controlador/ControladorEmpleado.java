@@ -220,7 +220,52 @@ public class ControladorEmpleado {
 
     public void buscarDatos (){ //Buscar datos de un empleado"; //usando el legajo
         Scanner scanner = vista.getScanner();
-        boolean encontrado = false;
+        boolean salir = false;
+
+        while (!salir) {
+            vista.setMensajeConsola("Ingrese el legajo del empleado que busca: ");
+            System.out.print(vista.getMensajeConsola());
+            int buscador = scanner.nextInt();
+
+            boolean encontrado = false;
+
+            for (Empleado empleado : listaEmpleados) {
+                if (empleado.getNumLegajo() == buscador) {
+                    vista.setMensajeConsola("Empleado " + buscador + " encontrado:");
+                    System.out.println(vista.getMensajeConsola());
+                    vista.setMensajeConsola("Nombre: " + empleado.getNombre());
+                    System.out.println(vista.getMensajeConsola());
+                    vista.setMensajeConsola("Apellido: " + empleado.getApellido());
+                    System.out.println(vista.getMensajeConsola());
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                vista.setMensajeConsola("No se encontró ningún empleado con ese legajo.");
+                System.out.println(vista.getMensajeConsola());
+            }
+
+            try {
+                // Preguntar si quiere volver a intentar o salir
+                vista.setMensajeConsola("\n¿Desea buscar otro legajo?\n1) Sí\n2) No (salir)");
+                System.out.println(vista.getMensajeConsola());
+                int opcion = scanner.nextInt();
+
+                if (opcion == 2) {
+                    salir = true;
+                }
+            } catch (InputMismatchException e) {
+                vista.setMensajeConsola("\nLa opción ingresada no es válida. Por favor intenta de nuevo!");
+                System.out.println(vista.getMensajeConsola());
+                scanner.nextLine();
+            }
+        }
+    }
+
+
+        /*boolean encontrado = false;
 
         while (!encontrado){
             vista.setMensajeConsola("Ingrese el legajo del empleado que busca: ");
@@ -247,8 +292,7 @@ public class ControladorEmpleado {
                 vista.setMensajeConsola("No se encontro ningun empleado con ese legajo.");
                 System.out.println(vista.getMensajeConsola());
             }
-        }
-    }
+        }*/
 
 
     public void guardarInfo(ArrayList<Empleado> listaEmpleados){
