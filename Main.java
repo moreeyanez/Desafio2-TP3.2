@@ -14,10 +14,9 @@ public class Main {
     public static void main(String[] args) {
         VistaEmpleado vistaEmpleado = new VistaEmpleado();
 
-        Empleado empleado1 = new Empleado();
         ArrayList<Empleado> listaEmpleados = new ArrayList<>();
 
-        ControladorEmpleado controlador = new ControladorEmpleado(vistaEmpleado, empleado1, listaEmpleados);
+        ControladorEmpleado controlador = new ControladorEmpleado(vistaEmpleado, listaEmpleados);
 
         controlador.output();
     }

@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class EmpleadoAsalariado extends Empleado{
     private double sueldoMensual;
-    private double sueldo;
 
-    public EmpleadoAsalariado(int numLegajo, String nombre, String apellido, ArrayList<Empleado> listaEmpleados, double sueldoMensual, double sueldo) {
+    public EmpleadoAsalariado(int numLegajo, String nombre, String apellido, ArrayList<Empleado> listaEmpleados, double sueldoMensual) {
         super(numLegajo, nombre, apellido, listaEmpleados);
         this.sueldoMensual = sueldoMensual;
-        this.sueldo = sueldo;
     }
 
     public EmpleadoAsalariado() {}
@@ -20,7 +18,9 @@ public class EmpleadoAsalariado extends Empleado{
         this.sueldoMensual = sueldoMensual;
     }
 
-    public double getSueldo() { return sueldo; }
+    @Override
+    public double calcularSueldo() {
+        return sueldoMensual; // Sueldo mensual ya calculado
+    }
 
-    public void setSueldo(double sueldo) { this.sueldo = sueldo; }
 }

@@ -6,14 +6,12 @@ public class EmpleadoPorHora extends Empleado{
     private double sueldoBasico;
     private int horasTrabajadas;
     private double valorPorHora;
-    private double sueldo;
 
-    public EmpleadoPorHora(int numLegajo, String nombre, String apellido, ArrayList<Empleado> listaEmpleados, double sueldoBasico, int horasTrabajadas, double valorPorHora, double sueldo) {
+    public EmpleadoPorHora(int numLegajo, String nombre, String apellido, ArrayList<Empleado> listaEmpleados, double sueldoBasico, int horasTrabajadas, double valorPorHora) {
         super(numLegajo, nombre, apellido, listaEmpleados);
         this.sueldoBasico = sueldoBasico;
         this.horasTrabajadas = horasTrabajadas;
         this.valorPorHora = valorPorHora;
-        this.sueldo = sueldo;
     }
 
     public EmpleadoPorHora () {}
@@ -42,7 +40,9 @@ public class EmpleadoPorHora extends Empleado{
         this.valorPorHora = valorPorHora;
     }
 
-    public double getSueldo() { return sueldo; }
+    @Override
+    public double calcularSueldo() {
+        return this.sueldoBasico + (this.horasTrabajadas * this.valorPorHora); // Cálculo de sueldo por hora
+    }
 
-    public void setSueldo(double sueldo) { this.sueldo = sueldo; }
 }

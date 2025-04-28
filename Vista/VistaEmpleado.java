@@ -22,12 +22,12 @@ public class VistaEmpleado {
     private int horasTrabajadasInput;
     private double valorPorHoraInput;
 
-    private double tasaDeComisionInput;
+    private double tasaComisionInput;
     private int ventasInput;
 
     private double sueldoBaseInput;
-    private double tasaComisionInput;
-    private int numVentasInput;
+    //private double tasaComisionInput;
+    //private int numVentasInput;
 
     public VistaEmpleado(){
         campo = new Scanner(System.in);
@@ -44,12 +44,12 @@ public class VistaEmpleado {
         horasTrabajadasInput = 0;
         valorPorHoraInput = 0d;
 
-        tasaDeComisionInput = 0d;
+       // tasaComisionInput = 0d;
         ventasInput = 0;
 
         sueldoBaseInput = 0d;
         tasaComisionInput = 0d;
-        numVentasInput = 0;
+        //numVentasInput = 0;
     }
 
     public void mostrarVista(){
@@ -63,19 +63,17 @@ public class VistaEmpleado {
         System.out.println(mensajeConsola);
         mensajeConsola = " 2) Buscar datos de un empleado"; //usando el legajo
         System.out.println(mensajeConsola);
-        mensajeConsola = " 3) Modificar datos de un empleado";
+        mensajeConsola = " 3) Eliminar un empleado";
         System.out.println(mensajeConsola);
-        mensajeConsola = " 4) Eliminar un empleado";
+        mensajeConsola = " 4) Cantidad total de empleados";
         System.out.println(mensajeConsola);
-        mensajeConsola = " 5) Cantidad total de empleados";
+        mensajeConsola = " 5) Cantidad de un tipo de empleados específico";
         System.out.println(mensajeConsola);
-        mensajeConsola = " 6) Cantidad de empleados X";
+        mensajeConsola = " 6) Mostrar lista de un tipo de empleado específico";
         System.out.println(mensajeConsola);
-        mensajeConsola = " 7) Mostrar lista de empleados x";
+        mensajeConsola = " 7) Mostrar lista de empleados";
         System.out.println(mensajeConsola);
-        mensajeConsola = " 8) Mostrar lista de empleados";
-        System.out.println(mensajeConsola);
-        mensajeConsola = " 9) Salir";
+        mensajeConsola = " 8) Salir";
         System.out.println(mensajeConsola);
 
         mensajeConsola = "Elija una opción del menú:";
@@ -170,13 +168,13 @@ public class VistaEmpleado {
         this.valorPorHoraInput = valorPorHoraInput;
     }
 
-    public double getTasaDeComisionInput() {
-        return tasaDeComisionInput;
-    }
+   // public double getTasaComisionInput() {
+     //   return tasaComisionInput;
+    //}
 
-    public void setTasaDeComisionInput(double tasaDeComisionInput) {
-        this.tasaDeComisionInput = tasaDeComisionInput;
-    }
+    //public void setTasaComisionInput(double tasaComisionInput) {
+     //   this.tasaComisionInput = tasaComisionInput;
+    //}
 
     public int getVentasInput() {
         return ventasInput;
@@ -202,11 +200,11 @@ public class VistaEmpleado {
         this.tasaComisionInput = tasaComisionInput;
     }
 
-    public int getNumVentasInput() {
-        return numVentasInput;
-    }
+  //  public int getNumVentasInput() {
+    //    return numVentasInput;
+    //}
 
-    public void setNumVentasInput(int numVentasInput) {
-        this.numVentasInput = numVentasInput;
-    }
+    //public void setNumVentasInput(int numVentasInput) {
+      //  this.numVentasInput = numVentasInput;
+    //}
 }

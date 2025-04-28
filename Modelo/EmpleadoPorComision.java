@@ -3,25 +3,23 @@ package desafio2.Modelo;
 import java.util.ArrayList;
 
 public class EmpleadoPorComision extends Empleado{
-    private double tasaDeComision;
+    private double tasaComision;
     private int ventas;
-    private double sueldo;
 
-    public EmpleadoPorComision(int numLegajo, String nombre, String apellido, ArrayList<Empleado> listaEmpleados, double tasaDeComision, int ventas, double sueldo) {
+    public EmpleadoPorComision(int numLegajo, String nombre, String apellido, ArrayList<Empleado> listaEmpleados, double tasaComision, int ventas) {
         super(numLegajo, nombre, apellido, listaEmpleados);
-        this.tasaDeComision = tasaDeComision;
+        this.tasaComision = tasaComision;
         this.ventas = ventas;
-        this.sueldo = sueldo;
     }
 
     public EmpleadoPorComision () {}
 
-    public double getTasaDeComision() {
-        return tasaDeComision;
+    public double getTasaComision() {
+        return tasaComision;
     }
 
-    public void setTasaDeComision(double tasaDeComision) {
-        this.tasaDeComision = tasaDeComision;
+    public void setTasaComision(double tasaComision) {
+        this.tasaComision = tasaComision;
     }
 
     public int getVentas() {
@@ -32,7 +30,9 @@ public class EmpleadoPorComision extends Empleado{
         this.ventas = ventas;
     }
 
-    public double getSueldo() { return sueldo; }
+    @Override
+    public double calcularSueldo() {
+        return (this.tasaComision * this.ventas) / 100; // Cálculo de sueldo por comisión
+    }
 
-    public void setSueldo(double sueldo) { this.sueldo = sueldo; }
 }
